@@ -1,0 +1,68 @@
+{
+  // Image, Dockerfile, or Docker Compose file.
+  // More info: https://containers.dev/guide/dockerfile.
+  "build": {
+    "dockerfile": "./Dockerfile",
+    "context": "."
+  },
+
+  // Features to add to the dev container.
+  // More info: https://containers.dev/features.
+  // "features": {},
+
+  // Use 'forwardPorts' to make a list of ports inside the container available
+  // locally.
+  // "forwardPorts": [],
+
+  // Use 'postCreateCommand' to run commands after the container is created.
+  // "postCreateCommand": "uname -a",
+
+  // Prevents git "dubious ownership" issue in devcontainer.
+  "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+
+  // Configure tool-specific properties.
+  "customizations": {
+    "vscode": {
+      // VS Code extensions to install when the container is created.
+      "extensions": [
+        "GitHub.vscode-pull-request-github",
+        "ms-vscode.makefile-tools",
+        "streetsidesoftware.code-spell-checker",
+        "VisualStudioExptTeam.intellicode-api-usage-examples",
+        "VisualStudioExptTeam.vscodeintellicode"
+      ],
+      "settings": {
+        // Set common indentation policy
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.detectIndentation": false,
+        // Set default VS Code terminal to zsh
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        // Markdown settings
+        "[markdown]": {
+          "editor.rulers": [
+            69,
+            72
+          ],
+          "editor.wordWrap": "bounded",
+          "editor.quickSuggestions": {
+            "comments": "off",
+            "strings": "off",
+            "other": "off"
+          }
+        },
+        // Common cSpell settings
+        "cSpell.ignorePaths": [
+          "vscode-extension",
+          ".git/",
+          ".vscode/",
+          ".devcontainer.json"
+        ]
+      }
+    }
+  }
+
+  // Uncomment to connect as root instead.
+  // More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
+}
