@@ -8,6 +8,7 @@
   "customizations": {
     "vscode": {
       "extensions": [
+        "GitHub.vscode-github-actions",
         "streetsidesoftware.code-spell-checker"
       ]
     }
