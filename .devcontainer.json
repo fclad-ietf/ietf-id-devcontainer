@@ -9,6 +9,7 @@
     "vscode": {
       "extensions": [
         "GitHub.vscode-github-actions",
+        "ms-vscode.makefile-tools",
         "streetsidesoftware.code-spell-checker"
       ]
     }
