@@ -3,8 +3,9 @@
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },
+  "initializeCommand": "git config -l --global --include > .gitconfig.global",
   "postCreateCommand": "npm install -g @devcontainers/cli",
-  "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+  "postAttachCommand": "/bin/bash .devcontainer/post-attach.sh",
   "customizations": {
     "vscode": {
       "extensions": [
